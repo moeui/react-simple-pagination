@@ -24,7 +24,7 @@ export default function (props: IProps): React.ReactElement | null {
     }, [page])
 
     return props.visible !== false ? (
-        <div className={classnames(style.pagination, 'reactPagination', props.className || '')}>
+        <div className={classnames(style.pagination, props.className || 'reactPagination')}>
             <div className={style.box}>
                 <div
                     className={classnames(style.prev, 'prev', { prevDisable: prevStatus })}

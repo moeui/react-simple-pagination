@@ -12,7 +12,7 @@
         pageSize={2} 
         total={10} 
         onChange={val =>{}} 
-        text={(page, allPage)=>`${page}/${allPage}`} // optional
+        text={(page, allPage)=>`${page}/${allPage}`} // optional 
         className="examplePagination"                // optional
         visible={visible}                            // optional
     />
