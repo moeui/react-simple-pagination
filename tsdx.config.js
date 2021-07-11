@@ -2,14 +2,12 @@ const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const images = require('@rollup/plugin-image');
-// const url = require('@rollup/plugin-url');
 const url = require("postcss-url")
 
 module.exports = {
     rollup(config, options) {
         config.plugins = [
             images(),
-            // url(),
             postcss({
                 plugins: [
                     url({
@@ -22,7 +20,7 @@ module.exports = {
                         preset: 'default',
                     }),
                 ],
-                // modules: true,
+                modules: true,
                 inject: true,
                 extract: false,
                 stylus: true,

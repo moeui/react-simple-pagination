@@ -44,6 +44,12 @@
   },
   "homepage": "https://github.com/moeui/react-simple-pagination#readme",
   "module": "dist/react-simple-pagination.esm.js",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "test-file-stub",
+      "\\.(css|scss|sass|stylus|styl|less)$": "identity-obj-proxy"
+    }
+  },
   "size-limit": [
     {
       "path": "dist/react-simple-pagination.cjs.production.min.js",

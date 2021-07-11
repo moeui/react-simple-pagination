@@ -1,8 +1,8 @@
-import './index.stylus'
-
 import classnames from 'classnames'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
+
+import style from './index.stylus'
 
 type IProps = {
     total: number
@@ -22,10 +22,10 @@ export default function (props: IProps): React.ReactElement | null {
     }, [page])
 
     return props.visible !== false ? (
-        <div className="pagination">
-            <div className="box">
+        <div className={style.pagination}>
+            <div className={style.box}>
                 <div
-                    className={classnames('prev', { prevDisable: prevStatus })}
+                    className={classnames(style.prev, { prevDisable: prevStatus })}
                     onClick={() => {
                         if (page - 1 > 0) {
                             setPage(page - 1)
@@ -37,11 +37,11 @@ export default function (props: IProps): React.ReactElement | null {
                         }
                     }}
                 />
-                <div className="text">
+                <div className={style.text}>
                     Page {page} of {allPage}
                 </div>
                 <div
-                    className={classnames('next', { nextDisable: nextStatus })}
+                    className={classnames(style.next, { nextDisable: nextStatus })}
                     onClick={() => {
                         if (nextStatus) return
                         if (page + 1 <= allPage) {
