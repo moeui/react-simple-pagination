@@ -6,7 +6,7 @@ import Pagination from '../.';
 const App = () => {
   return (
     <div>
-      <Pagination pageSize={2} total={10} onChange={val =>{}} />
+      <Pagination pageSize={2} total={10} onChange={val => { }} text={(page, allPage) => `${page}/${allPage}`} className="examplePagination" />
     </div>
   );
 };

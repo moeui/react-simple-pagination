@@ -8,7 +8,9 @@ type IProps = {
     total: number
     pageSize: number
     onChange(page: number): void
-    visible?: boolean
+    visible?: boolean,
+    className?: string,
+    text?: (page: number, allPage: number) => string
 }
 
 export default function (props: IProps): React.ReactElement | null {
@@ -22,10 +24,10 @@ export default function (props: IProps): React.ReactElement | null {
     }, [page])
 
     return props.visible !== false ? (
-        <div className={style.pagination}>
+        <div className={classnames(style.pagination, 'reactPagination', props.className || '')}>
             <div className={style.box}>
                 <div
-                    className={classnames(style.prev, { prevDisable: prevStatus })}
+                    className={classnames(style.prev, 'prev', { prevDisable: prevStatus })}
                     onClick={() => {
                         if (page - 1 > 0) {
                             setPage(page - 1)
@@ -37,11 +39,11 @@ export default function (props: IProps): React.ReactElement | null {
                         }
                     }}
                 />
-                <div className={style.text}>
-                    Page {page} of {allPage}
+                <div className={classnames(style.text, 'text')}>
+                    {props.text ? props.text(page, allPage) : `Page ${page} of ${allPage}`}
                 </div>
                 <div
-                    className={classnames(style.next, { nextDisable: nextStatus })}
+                    className={classnames(style.next, 'next', { nextDisable: nextStatus })}
                     onClick={() => {
                         if (nextStatus) return
                         if (page + 1 <= allPage) {

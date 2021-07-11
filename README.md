@@ -6,10 +6,13 @@
 
     import Pagination from '@moeui/react-simple-pagination'
 
+    let visible = false
+
     <Pagination 
-        pageSize={10} 
-        total={100} 
-        onChange={page => {
-            console.log(page)
-        }}
+        pageSize={2} 
+        total={10} 
+        onChange={val =>{}} 
+        text={(page, allPage)=>`${page}/${allPage}`} // optional
+        className="examplePagination"                // optional
+        visible={visible}                            // optional
     />
