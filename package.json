@@ -1,0 +1,81 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@moeui/react-simple-pagination",
+  "author": "zkeyword",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moeui/react-simple-pagination.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moeui/react-simple-pagination/issues"
+  },
+  "homepage": "https://github.com/moeui/react-simple-pagination#readme",
+  "module": "dist/react-simple-pagination.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/react-simple-pagination.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-simple-pagination.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.1",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "husky": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "size-limit": "^5.0.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@rollup/plugin-image": "^2.0.6",
+    "@rollup/plugin-url": "^6.0.0",
+    "autoprefixer": "^10.3.0",
+    "classnames": "^2.3.1",
+    "cssnano": "^5.0.6",
+    "postcss": "^8.3.5",
+    "postcss-modules": "^4.1.3",
+    "postcss-url": "^10.1.3",
+    "rollup-plugin-postcss": "^4.0.0",
+    "stylus": "^0.54.8"
+  }
+}
