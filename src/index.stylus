@@ -31,10 +31,10 @@
     .next
         background-image: url('./img/right.png')
 
-    .prevDisable
+    :global .prevDisable
         background-image: url('./img/leftDisable.png')
         cursor: not-allowed
 
-    .nextDisable
+    :global .nextDisable
         background-image: url('./img/rightDisable.png')
         cursor: not-allowed
