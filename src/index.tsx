@@ -29,6 +29,7 @@ export default function (props: IProps): React.ReactElement | null {
                 <div
                     className={classnames(style.prev, 'prev', { prevDisable: prevStatus })}
                     onClick={() => {
+                        if (prevStatus) return
                         if (page - 1 > 0) {
                             setPage(page - 1)
                             setPrevStatus(page - 1 === 1)
