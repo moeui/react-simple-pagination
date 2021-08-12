@@ -17,7 +17,11 @@ export default function (props: IProps): React.ReactElement | null {
     const [page, setPage] = useState(1)
     const allPage = Math.ceil(props.total / props.pageSize)
     const [prevStatus, setPrevStatus] = useState(true)
-    const [nextStatus, setNextStatus] = useState(allPage < 2)
+    const [nextStatus, setNextStatus] = useState(true)
+
+    useEffect(() => {
+        setNextStatus(allPage < 2)
+    }, [allPage])
 
     useEffect(() => {
         props.onChange(page)
